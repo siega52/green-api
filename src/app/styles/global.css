@@ -1,0 +1,41 @@
+:root {
+  --tg-bg: #e6ebee;
+  --tg-panel: #ffffff;
+  --tg-accent: #5288c1;
+  --tg-text: #0f1419;
+  --tg-muted: #6b7a88;
+  --tg-border: #dfe5ec;
+
+  --font-sans: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--tg-text);
+  background: var(--tg-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+  height: 100svh;
+}
+
+button,
+input {
+  font: inherit;
+}
