@@ -1,0 +1,26 @@
+.ui-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.ui-input__label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.ui-input__control {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #dfe5ec;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font: inherit;
+  background: #fff;
+  color: inherit;
+}
+
+.ui-input__control:disabled {
+  opacity: 0.6;
+}

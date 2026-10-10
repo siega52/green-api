@@ -1,0 +1,22 @@
+.ui-button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ui-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui-button--primary {
+  background: #5288c1;
+  color: #fff;
+}
+
+.ui-button--ghost {
+  background: transparent;
+  color: inherit;
+}
