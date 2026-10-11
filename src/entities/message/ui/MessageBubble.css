@@ -1,0 +1,29 @@
+.message-bubble {
+  max-width: min(420px, 80%);
+  align-self: flex-start;
+  background: #fff;
+  border-radius: 12px 12px 12px 4px;
+  padding: 8px 10px 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.message-bubble--outgoing {
+  align-self: flex-end;
+  background: #effdde;
+  border-radius: 12px 12px 4px 12px;
+}
+
+.message-bubble__text {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-align: left;
+}
+
+.message-bubble__time {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  opacity: 0.55;
+  text-align: right;
+}
