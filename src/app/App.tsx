@@ -1,6 +1,7 @@
 import { useSession } from '@/entities/session'
 import { AuthPanel } from '@/widgets/auth-panel'
 import { ChatSidebar } from '@/widgets/chat-sidebar'
+import { ChatWindow } from '@/widgets/chat-window'
 import { AppProviders } from './providers/AppProviders'
 import './styles/global.css'
 
@@ -27,16 +28,7 @@ function AppContent() {
           }}
         >
           <ChatSidebar />
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'var(--tg-muted)',
-            }}
-          >
-            Выберите или создайте чат
-          </div>
+          <ChatWindow />
         </div>
       ) : (
         <div

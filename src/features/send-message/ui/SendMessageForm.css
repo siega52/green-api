@@ -1,0 +1,22 @@
+.send-message-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 12px;
+  align-items: center;
+}
+
+.send-message-form__input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font: inherit;
+  background: #fff;
+}
+
+.send-message-form__error {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #c0392b;
+  font-size: 12px;
+}
