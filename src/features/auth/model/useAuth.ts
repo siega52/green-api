@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { useSession, type Credentials } from '@/entities/session'
-import { DEFAULT_API_URL } from '@/shared/config'
 
 type LoginInput = {
   idInstance: string
   apiTokenInstance: string
-  apiUrl?: string
+  apiUrl: string
 }
 
 export function useAuth() {
@@ -18,11 +17,11 @@ export function useAuth() {
     const next: Credentials = {
       idInstance: String(idInstance ?? '').trim(),
       apiTokenInstance: String(apiTokenInstance ?? '').trim(),
-      apiUrl: String(apiUrl ?? DEFAULT_API_URL).trim() || DEFAULT_API_URL,
+      apiUrl: String(apiUrl ?? '').trim(),
     }
 
-    if (!next.idInstance || !next.apiTokenInstance) {
-      setError('Укажите idInstance и apiTokenInstance')
+    if (!next.idInstance || !next.apiTokenInstance || !next.apiUrl) {
+      setError('Укажите idInstance, apiTokenInstance и apiUrl')
       return false
     }
 

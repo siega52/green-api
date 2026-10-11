@@ -1,0 +1,12 @@
+.create-chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+}
+
+.create-chat-form__error {
+  margin: 0;
+  color: #c0392b;
+  font-size: 12px;
+}

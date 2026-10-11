@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from 'react'
 import { Button, Input } from '@/shared/ui'
-import { DEFAULT_API_URL } from '@/shared/config'
 import { useAuth } from '../model/useAuth'
 import './AuthForm.css'
 
@@ -10,7 +9,7 @@ export function AuthForm() {
   const [apiTokenInstance, setApiTokenInstance] = useState(
     credentials?.apiTokenInstance ?? '',
   )
-  const [apiUrl, setApiUrl] = useState(credentials?.apiUrl ?? DEFAULT_API_URL)
+  const [apiUrl, setApiUrl] = useState(credentials?.apiUrl ?? '')
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()

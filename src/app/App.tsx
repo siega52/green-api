@@ -1,13 +1,65 @@
-import { AppProviders } from './providers/AppProviders'
+import { useSession } from '@/entities/session'
 import { AuthPanel } from '@/widgets/auth-panel'
+import { ChatSidebar } from '@/widgets/chat-sidebar'
+import { AppProviders } from './providers/AppProviders'
 import './styles/global.css'
+
+function AppContent() {
+  const { isAuthenticated } = useSession()
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100%',
+        background: 'var(--tg-bg)',
+      }}
+    >
+      <AuthPanel />
+      {isAuthenticated ? (
+        <div
+          style={{
+            flex: 1,
+            display: 'grid',
+            gridTemplateColumns: 'minmax(260px, 320px) 1fr',
+            minHeight: 0,
+          }}
+        >
+          <ChatSidebar />
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'var(--tg-muted)',
+            }}
+          >
+            Выберите или создайте чат
+          </div>
+        </div>
+      ) : (
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'var(--tg-muted)',
+            padding: 24,
+          }}
+        >
+          Введите учётные данные GREEN-API, чтобы открыть чат
+        </div>
+      )}
+    </div>
+  )
+}
 
 export function App() {
   return (
     <AppProviders>
-      <div style={{ minHeight: '100%', background: 'var(--tg-bg)' }}>
-        <AuthPanel />
-      </div>
+      <AppContent />
     </AppProviders>
   )
 }
