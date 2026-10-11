@@ -1,4 +1,5 @@
 .auth-panel {
-  border-bottom: 1px solid #dfe5ec;
-  background: #fff;
+  z-index: 1;
+  border-bottom: 1px solid var(--tg-border);
+  background: var(--tg-panel);
 }

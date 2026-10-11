@@ -2,25 +2,32 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 16px;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 20px 16px;
 }
 
 .auth-form--compact {
+  max-width: none;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  margin: 0;
+  padding: 10px 16px;
+  background: #f7f9fb;
 }
 
 .auth-form__title {
   margin: 0 0 4px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
+  color: var(--tg-text);
 }
 
 .auth-form__hint {
   margin: 0;
   font-size: 13px;
+  color: var(--tg-muted);
 }
 
 .auth-form__error {

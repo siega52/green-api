@@ -3,20 +3,27 @@
   flex-direction: column;
   min-height: 0;
   background:
-    linear-gradient(rgba(228, 234, 240, 0.85), rgba(228, 234, 240, 0.85)),
+    linear-gradient(rgba(228, 234, 240, 0.88), rgba(228, 234, 240, 0.88)),
     repeating-linear-gradient(
       -35deg,
       transparent,
       transparent 12px,
-      rgba(255, 255, 255, 0.25) 12px,
-      rgba(255, 255, 255, 0.25) 24px
+      rgba(255, 255, 255, 0.28) 12px,
+      rgba(255, 255, 255, 0.28) 24px
     );
 }
 
 .chat-window--empty {
   align-items: center;
   justify-content: center;
-  color: #6b7a88;
+  color: var(--tg-muted);
+}
+
+.chat-window--empty p {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .chat-window__header {
@@ -24,8 +31,8 @@
   align-items: center;
   gap: 12px;
   padding: 10px 16px;
-  background: #fff;
-  border-bottom: 1px solid #dfe5ec;
+  background: var(--tg-panel);
+  border-bottom: 1px solid var(--tg-border);
 }
 
 .chat-window__meta {
@@ -36,9 +43,18 @@
   min-width: 0;
 }
 
+.chat-window__meta strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .chat-window__meta span {
   font-size: 12px;
-  opacity: 0.6;
+  color: var(--tg-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .chat-window__messages {
@@ -53,5 +69,5 @@
 
 .chat-window__composer {
   background: #f1f5f8;
-  border-top: 1px solid #dfe5ec;
+  border-top: 1px solid var(--tg-border);
 }
