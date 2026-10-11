@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
+import { SessionProvider } from '@/entities/session'
 
 export function AppProviders({ children }: { children: ReactNode }) {
-  return children
+  return <SessionProvider>{children}</SessionProvider>
 }

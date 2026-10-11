@@ -1,13 +1,13 @@
 import { AppProviders } from './providers/AppProviders'
+import { AuthPanel } from '@/widgets/auth-panel'
 import './styles/global.css'
 
 export function App() {
   return (
     <AppProviders>
-      <main style={{ padding: 24 }}>
-        <h1 style={{ margin: 0 }}>GREEN-API Telegram Chat</h1>
-        <p style={{ color: 'var(--tg-muted)' }}>FSD scaffold</p>
-      </main>
+      <div style={{ minHeight: '100%', background: 'var(--tg-bg)' }}>
+        <AuthPanel />
+      </div>
     </AppProviders>
   )
 }
