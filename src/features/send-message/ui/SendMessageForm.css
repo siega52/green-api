@@ -1,22 +1,55 @@
 .send-message-form {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 8px;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px 12px 12px;
   align-items: center;
 }
 
 .send-message-form__input {
   border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  padding: 12px 16px;
   font: inherit;
   background: #fff;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(15, 20, 25, 0.06);
+}
+
+.send-message-form__input:focus {
+  box-shadow:
+    0 0 0 3px rgba(51, 144, 236, 0.12),
+    0 1px 2px rgba(15, 20, 25, 0.06);
+}
+
+.send-message-form__send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--tg-accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(51, 144, 236, 0.35);
+}
+
+.send-message-form__send:hover:not(:disabled) {
+  background: var(--tg-accent-hover);
+  transform: translateY(-1px);
+}
+
+.send-message-form__send:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .send-message-form__error {
   grid-column: 1 / -1;
   margin: 0;
-  color: #c0392b;
+  color: #e35d6a;
   font-size: 12px;
 }

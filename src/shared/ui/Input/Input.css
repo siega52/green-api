@@ -1,24 +1,37 @@
 .ui-input {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   text-align: left;
 }
 
 .ui-input__label {
   font-size: 12px;
-  opacity: 0.7;
+  font-weight: 600;
+  color: var(--tg-muted);
+  letter-spacing: 0.02em;
 }
 
 .ui-input__control {
   box-sizing: border-box;
   width: 100%;
-  border: 1px solid #dfe5ec;
-  border-radius: 8px;
-  padding: 8px 12px;
+  border: 1px solid var(--tg-border);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
   font: inherit;
-  background: #fff;
+  background: #f7f9fb;
   color: inherit;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ui-input__control:focus {
+  border-color: rgba(51, 144, 236, 0.55);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(51, 144, 236, 0.12);
 }
 
 .ui-input__control:disabled {

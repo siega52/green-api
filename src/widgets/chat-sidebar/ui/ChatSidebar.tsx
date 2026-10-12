@@ -9,13 +9,16 @@ export function ChatSidebar() {
 
   return (
     <aside className="chat-sidebar">
-      <header className="chat-sidebar__header">Чаты</header>
+      <header className="chat-sidebar__header">
+        <h2 className="chat-sidebar__title">Чаты</h2>
+        <p className="chat-sidebar__caption">Новый диалог по номеру</p>
+      </header>
       {isAuthenticated ? <CreateChatForm /> : null}
       <div className="chat-sidebar__list">
         {chats.length === 0 ? (
           <p className="chat-sidebar__empty">
             {isAuthenticated
-              ? 'Создайте чат по номеру телефона'
+              ? 'Пока пусто — создайте чат по номеру телефона'
               : 'Войдите, чтобы начать'}
           </p>
         ) : (

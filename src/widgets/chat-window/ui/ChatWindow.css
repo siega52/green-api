@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-  background:
-    linear-gradient(rgba(228, 234, 240, 0.88), rgba(228, 234, 240, 0.88)),
-    repeating-linear-gradient(
-      -35deg,
-      transparent,
-      transparent 12px,
-      rgba(255, 255, 255, 0.28) 12px,
-      rgba(255, 255, 255, 0.28) 24px
-    );
+  background-color: #8eb2c9;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.14) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.12) 0 2px, transparent 3px),
+    linear-gradient(180deg, #9bbfd4 0%, #87aec7 100%);
+  background-size:
+    48px 48px,
+    36px 36px,
+    42px 42px,
+    auto;
 }
 
 .chat-window--empty {
@@ -19,11 +21,24 @@
   color: var(--tg-muted);
 }
 
-.chat-window--empty p {
+.chat-window__empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 280px;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 24px rgba(15, 20, 25, 0.12);
+  text-align: center;
+  animation: fade-up 0.35s ease;
+}
+
+.chat-window__empty-card p {
   margin: 0;
-  padding: 10px 14px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .chat-window__header {
@@ -31,8 +46,9 @@
   align-items: center;
   gap: 12px;
   padding: 10px 16px;
-  background: var(--tg-panel);
-  border-bottom: 1px solid var(--tg-border);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(8px);
 }
 
 .chat-window__meta {
@@ -47,6 +63,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 15px;
 }
 
 .chat-window__meta span {
@@ -61,13 +78,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px;
+  gap: 6px;
+  padding: 18px 16px;
   overflow-y: auto;
   min-height: 0;
 }
 
 .chat-window__composer {
-  background: #f1f5f8;
-  border-top: 1px solid var(--tg-border);
+  background: rgba(241, 243, 244, 0.96);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
 }

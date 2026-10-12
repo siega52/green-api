@@ -1,17 +1,29 @@
 :root {
-  --tg-bg: #e6ebee;
+  --tg-bg: #0e1621;
+  --tg-bg-soft: #17212b;
   --tg-panel: #ffffff;
-  --tg-accent: #5288c1;
+  --tg-sidebar: #ffffff;
+  --tg-accent: #3390ec;
+  --tg-accent-hover: #2b7fd1;
   --tg-text: #0f1419;
-  --tg-muted: #6b7a88;
-  --tg-border: #dfe5ec;
-  --tg-outgoing: #effdde;
+  --tg-text-inv: #ffffff;
+  --tg-muted: #707579;
+  --tg-border: #dfe3e6;
+  --tg-outgoing: #eeffde;
+  --tg-incoming: #ffffff;
+  --tg-composer: #f1f3f4;
+  --tg-pattern: #c5d5e0;
+  --tg-shadow: 0 12px 40px rgba(14, 22, 33, 0.28);
 
-  --font-sans: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  --font-sans: 'Manrope', 'Segoe UI', sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
 
   font-family: var(--font-sans);
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.45;
   color: var(--tg-text);
   background: var(--tg-bg);
   font-synthesis: none;
@@ -39,4 +51,37 @@ body {
 button,
 input {
   font: inherit;
+}
+
+button {
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

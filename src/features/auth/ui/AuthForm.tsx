@@ -19,9 +19,12 @@ export function AuthForm() {
   if (isAuthenticated && credentials) {
     return (
       <div className="auth-form auth-form--compact">
-        <p className="auth-form__hint">
-          Instance: <code>{credentials.idInstance}</code>
-        </p>
+        <div className="auth-form__session">
+          <span className="auth-form__status" aria-hidden />
+          <p className="auth-form__hint">
+            Instance <code>{credentials.idInstance}</code>
+          </p>
+        </div>
         <Button variant="ghost" onClick={logout}>
           Выйти
         </Button>
@@ -31,10 +34,10 @@ export function AuthForm() {
 
   return (
     <form className="auth-form" onSubmit={handleSubmit}>
-      <h2 className="auth-form__title">GREEN-API</h2>
       <Input
         label="idInstance"
         name="idInstance"
+        placeholder="4100..."
         value={idInstance}
         onChange={(e) => setIdInstance(e.target.value)}
         autoComplete="off"
@@ -42,6 +45,8 @@ export function AuthForm() {
       <Input
         label="apiTokenInstance"
         name="apiTokenInstance"
+        type="password"
+        placeholder="Токен из кабинета"
         value={apiTokenInstance}
         onChange={(e) => setApiTokenInstance(e.target.value)}
         autoComplete="off"
@@ -49,12 +54,15 @@ export function AuthForm() {
       <Input
         label="apiUrl"
         name="apiUrl"
+        placeholder="https://4100.api.green-api.com"
         value={apiUrl}
         onChange={(e) => setApiUrl(e.target.value)}
         autoComplete="off"
       />
       {error ? <p className="auth-form__error">{error}</p> : null}
-      <Button type="submit">Войти</Button>
+      <Button type="submit" className="auth-form__submit">
+        Войти в чат
+      </Button>
     </form>
   )
 }

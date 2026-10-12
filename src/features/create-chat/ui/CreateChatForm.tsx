@@ -15,18 +15,20 @@ export function CreateChatForm() {
 
   return (
     <form className="create-chat-form" onSubmit={handleSubmit}>
-      <Input
-        label="Номер получателя"
-        name="phone"
-        placeholder="79991234567"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        disabled={isLoading}
-      />
+      <div className="create-chat-form__row">
+        <Input
+          name="phone"
+          placeholder="79991234567"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          disabled={isLoading}
+          className="create-chat-form__input"
+        />
+        <Button type="submit" disabled={isLoading || !phone.trim()}>
+          {isLoading ? '…' : 'Создать'}
+        </Button>
+      </div>
       {error ? <p className="create-chat-form__error">{error}</p> : null}
-      <Button type="submit" disabled={isLoading}>
-        {isLoading ? 'Создание…' : 'Создать чат'}
-      </Button>
     </form>
   )
 }
